@@ -47,7 +47,7 @@ const RefundPolicyPage = () => {
                         <a href="mailto:kakullieajain@gmail.com" className="underline hover:text-gray-700">
                             kakullieajain@gmail.com
                         </a>{" "}
-                        or call us at +91 97170 33830.
+                        or call us at +91 9355135307.
                     </p>
                 </section>
             </div>

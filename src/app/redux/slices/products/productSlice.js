@@ -20,9 +20,10 @@ export const fetchFastProducts = createAsyncThunk(
         try {
             const state = getState();
             const countryCode = state.country || "IN";
-            const response = await axios.get(`/api/products/fast?page=${page}&limit=${limit}`, {
+            const response = await axios.get(`/api/products/fast`, {
                 headers: { "x-country": countryCode },
             });
+            console.log("responsefast" , response)
             return response.data;
         } catch (err) {
             return rejectWithValue(err.response?.data || "Failed to fetch fast products");
