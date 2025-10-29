@@ -112,10 +112,10 @@ const PrivacyPolicyPage = () => {
                     <p>
                         Email:{" "}
                         <a
-                            href="mailto:kakullieajain@gmail.com"
+                            href="mailto:hecatewizardmall@gmail.com"
                             className="underline hover:text-gray-700"
                         >
-                            kakullieajain@gmail.com
+                            hecatewizardmall@gmail.com
                         </a>
                     </p>
                 </div>

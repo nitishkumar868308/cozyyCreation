@@ -81,7 +81,7 @@ const Footer = () => {
 
                         <div className="flex items-center gap-2 text-[#f3ce8e] hover:text-gray-100 transition cursor-pointer">
                             <Mail className="h-5 w-5" />
-                            <span>kakullieajain@gmail.com</span>
+                            <span>hecatewizardmall@gmail.com</span>
                         </div>
 
                         <div className="flex items-center gap-2 text-[#f3ce8e] hover:text-gray-100 transition cursor-pointer">

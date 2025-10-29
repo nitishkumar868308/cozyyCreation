@@ -44,8 +44,8 @@ const RefundPolicyPage = () => {
                     <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
                     <p className="text-lg">
                         If you have any questions or concerns, please feel free to reach out to our customer care team at{" "}
-                        <a href="mailto:kakullieajain@gmail.com" className="underline hover:text-gray-700">
-                            kakullieajain@gmail.com
+                        <a href="mailto:hecatewizardmall@gmail.com" className="underline hover:text-gray-700">
+                            hecatewizardmall@gmail.com
                         </a>{" "}
                         or call us at +91 9355135307.
                     </p>

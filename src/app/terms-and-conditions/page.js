@@ -58,7 +58,7 @@ const TermsPage = () => {
                 {/* Operated By */}
                 <section>
                     <h2 className="text-2xl font-semibold mb-2">Operated By</h2>
-                    <p className="text-lg">Kakullie A Jain </p>
+                    <p className="text-lg">Kakullie A Jain And Pratiek A Jain</p>
                 </section>
 
             </div>
