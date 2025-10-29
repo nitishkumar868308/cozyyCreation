@@ -118,12 +118,12 @@ const Topbar = () => {
 
 
     return (
-        <div className="w-full bg-black text-white">
+        <div className="w-full bg-[#102129] text-[#f3ce8e]">
             <div className="mx-auto max-w-screen-2xl px-4">
                 <div className="flex items-center justify-between py-2 md:py-3">
                     <div className="w-1/3"></div>
                     <h1 className="font-libreBaskerville tracking-wide text-base sm:text-lg md:text-2xl uppercase text-center w-1/3">
-                        hecate wizard mall
+                        Cozyy Creations
                     </h1>
                     <div className="w-1/3 flex justify-end">
                         <select

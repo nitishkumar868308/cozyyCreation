@@ -24,10 +24,10 @@ const About = () => {
             {/* Intro Section */}
             <div className="max-w-5xl mx-auto px-6 py-16 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-600">
-                    Welcome to <span className="text-gray-900">Hecate Wizard Mall</span>
+                    Welcome to <span className="text-gray-900">Cozyy Creations</span>
                 </h2>
                 <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                    At Hecate Wizard Mall, we aim to redefine shopping with premium
+                    At Cozyy Creations, we aim to redefine shopping with premium
                     products, unbeatable offers, and a seamless experience. Our goal is
                     simple: to bring magic to your everyday shopping.
                 </p>
@@ -78,7 +78,7 @@ const About = () => {
             {/* Call to Action */}
             <div className="bg-gray-200 text-white py-16 text-center">
                 <h2 className="text-3xl md:text-4xl text-gray-500 font-bold mb-6">
-                    Join the <span className="text-gray-900">Hecate Wizard Mall</span> Family
+                    Join the <span className="text-gray-900">Cozyy Creations</span> Family
                 </h2>
                 <p className="max-w-2xl mx-auto text-gray-700 mb-8">
                     Be the first to know about exclusive drops, offers, and updates from our store.

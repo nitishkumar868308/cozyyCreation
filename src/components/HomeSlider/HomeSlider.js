@@ -11,14 +11,14 @@ import "swiper/css/navigation";
 
 const HomeSlider = () => {
     const slides = [
-        { id: 1, image: "/image/banner1.jpg", text: "Welcome to Our Website" },
-        { id: 2, image: "/image/banner2.jpeg", text: "Explore Our Services" },
-        { id: 3, image: "/image/banner3.png", text: "Innovative Solutions" },
-        { id: 4, image: "/image/banner4.png", text: "Grow With Us" },
-        { id: 5, image: "/image/banner5.jpeg", text: "Your Success, Our Goal" },
-        { id: 6, image: "/image/banner6.jpg", text: "Quality & Excellence" },
-        { id: 7, image: "/image/banner7.jpg", text: "Join Our Community" },
-        { id: 8, image: "/image/upscalemedia-transformed.jpeg", text: "Start Your Journey" },
+        { id: 1, image: "/image/Untitled-1.png", text: "Welcome to Our Website" },
+        { id: 2, image: "/image/Untitled-1-Picsart-AiImageEnhancer.png", text: "Explore Our Services" },
+        { id: 3, image: "/image/download3.jpg", text: "Innovative Solutions" },
+        { id: 4, image: "/image/download4.jpg", text: "Grow With Us" },
+        { id: 5, image: "/image/download5.jpg", text: "Your Success, Our Goal" },
+        { id: 6, image: "/image/download6.jpg", text: "Quality & Excellence" },
+        { id: 7, image: "/image/download7.jpg", text: "Join Our Community" },
+        { id: 8, image: "/image/download8.jpg", text: "Start Your Journey" },
     ];
 
     return (

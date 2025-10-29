@@ -34,8 +34,8 @@ const ShippingReturnPolicyPage = () => {
                         </li>
                         <li>
                             Please contact our customer service at{" "}
-                            <a href="mailto:info@hecatewizardmall.com" className="underline hover:text-gray-700">
-                                info@hecatewizardmall.com
+                            <a href="mailto:kakullieajain@gmail.com" className="underline hover:text-gray-700">
+                                kakullieajain@gmail.com
                             </a>{" "}
                             to start your return process.
                         </li>

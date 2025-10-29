@@ -266,14 +266,14 @@ const Header = () => {
 
     return (
         <>
-            <header className="w-full bg-[#161619] shadow-md md:relative fixed md:static top-0 z-50">
+            <header className="w-full bg-[#162a33] shadow-md md:relative fixed md:static top-0 z-50">
                 <div className="max-w-screen-2xl mx-auto flex items-center justify-between px-6 py-3">
 
                     {/* Logo */}
                     <div className="flex items-center gap-2">
                         <Link href="/">
                             <img
-                                src="/image/HWM LOGO 1 GREY 100.png"
+                                src="/image/NEW COZYY CREATINS LOGO (1).png"
                                 alt="Logo"
                                 className="h-20 w-24 object-contain"
                             />
@@ -340,7 +340,7 @@ const Header = () => {
                                     >
                                         <Link
                                             href={href}
-                                            className={`font-functionPro px-4 py-2 rounded-lg font-medium transition cursor-pointer ${isActive ? "bg-white text-[#161619]" : "text-white hover:bg-gray-700"
+                                            className={`font-functionPro px-4 py-2 rounded-lg font-medium transition cursor-pointer ${isActive ? "bg-[#265157]/80 text-[#f3ce8e] shadow-inner" : "text-[#f3ce8e] hover:bg-[#698467]/10 hover:scale-105"
                                                 }`}
                                         >
                                             {item}
@@ -471,9 +471,9 @@ const Header = () => {
                         <SearchPage />
 
                         <button onClick={() => setIsOpen(true)} className="relative cursor-pointer">
-                            <ShoppingCart className="h-6 w-6 text-white" />
+                            <ShoppingCart className="h-6 w-6 text-[#f3ce8e]" />
                             {userCartCount > 0 && (
-                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-[#f3ce8e] text-xs px-1.5 py-0.5 rounded-full">
                                     {userCartCount}
                                 </span>
                             )}
@@ -1001,7 +1001,7 @@ const Header = () => {
                             {!user ? (
                                 <button
                                     onClick={() => setLoginModalOpen(true)}
-                                    className="flex items-center gap-2 cursor-pointer hover:text-blue-400 transition text-white font-functionPro"
+                                    className="flex items-center text-[#f3ce8e] gap-2 cursor-pointer hover:text-blue-400 transition  font-functionPro"
                                 >
                                     <User className="h-6 w-6" />
                                     <span className="hidden md:inline font-medium">Login</span>
@@ -1020,7 +1020,7 @@ const Header = () => {
                                     </div> */}
                                     <div className="flex items-center gap-3 cursor-pointer group">
 
-                                        <div className="text-white text-sm sm:text-base md:text-lg font-medium">
+                                        <div className="text-[#f3ce8e] text-sm sm:text-base md:text-lg font-medium">
                                             Welcome,
                                         </div>
 
@@ -1035,7 +1035,7 @@ const Header = () => {
                                                     unoptimized
                                                 />
                                             ) : (
-                                                <span className="text-black font-bold text-lg">
+                                                <span className="text-[#f3ce8e] font-bold text-lg">
                                                     {getInitials(user.name)}
                                                 </span>
                                             )}

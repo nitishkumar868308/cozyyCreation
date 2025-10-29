@@ -17,10 +17,10 @@ const PrivacyPolicyPage = () => {
                     <p>
                         Our website address is:
                         <a
-                            href="https://hecatewizardmall.com"
+                            href="https://cozyycreations.com/"
                             className="underline hover:text-gray-700"
                         >
-                            https://hecatewizardmall.com
+                            https://cozyycreations.com/
                         </a>.
                     </p>
                 </div>
@@ -100,7 +100,7 @@ const PrivacyPolicyPage = () => {
                             Cookies: improve user experience and personalization.
                         </li>
                         <li>
-                            Changes: Hecate Wizard Mall may update this policy anytime.
+                            Changes: Cozyy Creations Mall may update this policy anytime.
                         </li>
                     </ul>
                 </div>
@@ -108,14 +108,14 @@ const PrivacyPolicyPage = () => {
                 <div className="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
                     <h2 className="text-2xl font-semibold mb-3">Contact Us:</h2>
                     <p>Address: New Delhi</p>
-                    <p>Phone: +91 97170 33830</p>
+                    <p>Phone: +91 9355135307</p>
                     <p>
                         Email:{" "}
                         <a
-                            href="mailto:info@hecatewizardmall.com"
+                            href="mailto:kakullieajain@gmail.com"
                             className="underline hover:text-gray-700"
                         >
-                            info@hecatewizardmall.com
+                            kakullieajain@gmail.com
                         </a>
                     </p>
                 </div>

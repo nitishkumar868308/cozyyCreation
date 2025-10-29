@@ -13,7 +13,7 @@ const TermsPage = () => {
                 {/* Introduction */}
                 <section>
                     <p className="text-lg">
-                        These terms and conditions outline the rules and regulations for the use of <strong>Hecate Wizard Mall</strong>’s website, operated by Hecate Wizard Mall (Company Name). By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use Hecate Wizard Mall’s website if you do not accept all the terms and conditions stated on this page.
+                        These terms and conditions outline the rules and regulations for the use of <strong>Cozyy Creation</strong>’s website, operated by Cozyy Creations (Company Name). By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use Cozyy Creation’s website if you do not accept all the terms and conditions stated on this page.
                     </p>
                 </section>
 
@@ -29,7 +29,7 @@ const TermsPage = () => {
                 <section>
                     <h2 className="text-2xl font-semibold mb-2">Intellectual Property Rights</h2>
                     <p className="text-lg">
-                        The content, images, and designs found on this website are owned by or licensed to Hecate Wizard Mall. Unauthorized use or reproduction of any material from this site is prohibited.
+                        The content, images, and designs found on this website are owned by or licensed to Cozyy Creations. Unauthorized use or reproduction of any material from this site is prohibited.
                     </p>
                 </section>
 
@@ -37,7 +37,7 @@ const TermsPage = () => {
                 <section>
                     <h2 className="text-2xl font-semibold mb-2">Product Information</h2>
                     <p className="text-lg">
-                        Hecate Wizard Mall strives to ensure that all product descriptions, prices, and availability are accurate. However, we do not warrant that these details will always be up to date.
+                        Cozyy Creations strives to ensure that all product descriptions, prices, and availability are accurate. However, we do not warrant that these details will always be up to date.
                     </p>
                 </section>
 
@@ -58,7 +58,7 @@ const TermsPage = () => {
                 {/* Operated By */}
                 <section>
                     <h2 className="text-2xl font-semibold mb-2">Operated By</h2>
-                    <p className="text-lg">Kakullie A Jain And Pratiek A Jain</p>
+                    <p className="text-lg">Kakullie A Jain </p>
                 </section>
 
             </div>
