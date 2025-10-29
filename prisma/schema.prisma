@@ -1,0 +1,327 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  profileImage     String?
+  password  String
+  role      String   @default("USER")
+  gender    Gender?
+  phone     String?
+  address   String?
+  country   String?
+  city      String?
+  pincode   String?
+  state     String?
+  carts Cart[]
+  addresses Address[]
+  orders    Orders[] 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
+
+model Header {
+  id        Int      @id @default(autoincrement())
+  name      String
+  active    Boolean  @default(true)
+  deleted   Int      @default(0) // 0 = not deleted, 1 = deleted
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id            Int           @id @default(autoincrement())
+  name          String
+  image         String?
+  active        Boolean       @default(true)
+  deleted       Int           @default(0) // 0 = not deleted, 1 = deleted
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  subcategories Subcategory[]
+  products  Product[]
+  countryTaxes CountryTax[] 
+}
+
+model Subcategory {
+  id         Int      @id @default(autoincrement())
+  name       String
+  categoryId Int
+  category   Category @relation(fields: [categoryId], references: [id])
+  image      String?
+  active     Boolean  @default(true)
+  products   Product[]
+  offerId     Int?      
+  deleted    Int      @default(0) // 0 = not deleted, 1 = deleted
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Product {
+  id              String      @id @default(cuid())
+  name            String
+  short           String?
+  categoryId      Int?
+  category        Category?   @relation(fields: [categoryId], references: [id])
+  subcategoryId   Int
+  subcategory     Subcategory? @relation(fields: [subcategoryId], references: [id])
+  sku             String      @unique       // Unique SKU
+  image           String[]
+  description     String?
+  active          Boolean     @default(true)
+  deleted         Int         @default(0)
+  slug            String?     @unique       // SEO-friendly URL
+  metaTitle       String?     // SEO title
+  metaDescription String?     // SEO description
+  keywords        String?     // Optional keywords for SEO
+  price           String?     // store as string
+  stock           String?     // store as string
+  size            String[]    @default([])  // array, default empty
+  color           String[]    @default([])  // array, default empty
+  otherCountriesPrice String?
+  offerId         Int?        
+  primaryOffer  Offer? @relation("PrimaryOffer", fields: [offerId], references: [id]) 
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  isDefault       Json?
+  variations      ProductVariation[]
+  offers          Offer[] @relation("ProductOffers")
+  tags            Tag[]       @relation("ProductTags") 
+  marketLinks MarketLink[] 
+  minQuantity     String?   
+  bulkPrice       String?   
+}
+
+model ProductVariation {
+  id          String   @id @default(cuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id])
+  variationName String
+  sku         String   @unique
+  price       String?
+  otherCountriesPrice String?
+  stock       String?
+  short       String?
+  image       String[]
+  name       String?
+  description String?
+  offerId       Int?
+  offer         Offer?   @relation("OfferToVariation", fields: [offerId], references: [id])
+  active          Boolean     @default(true)
+  deleted         Int         @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  tags        Tag[]    @relation("VariationTags")
+  minQuantity     String?   
+  bulkPrice       String?  
+}
+
+
+model Attribute {
+  id        Int      @id @default(autoincrement())
+  name      String
+  values    String[] // array of strings
+  active    Boolean  @default(true)
+  deleted   Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Offer {
+  id            Int      @id @default(autoincrement())
+  name          String
+  discountType  String   
+  discountValue Json     
+  type          Json     
+  description   String?
+  active        Boolean  @default(true)
+  deleted       Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  products          Product[] @relation("ProductOffers") 
+  primaryProducts Product[] @relation("PrimaryOffer") 
+  productVariations ProductVariation[]  @relation("OfferToVariation")
+}
+
+model CountryPricing {
+  id        Int      @id @default(autoincrement())
+  country   String
+  code      String   @unique // e.g., "IN", "US"
+  multiplier Float
+  currency  String
+  currencySymbol String?
+  conversionRate Float?
+  active    Boolean  @default(true)
+  deleted   Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Cart {
+  id            String   @id @default(uuid())
+  productId     String
+  variationId   String?     // optional
+  productName   String
+  quantity      Int
+  pricePerItem  Float
+  currency      String?
+  currencySymbol String
+  totalPrice    Float
+  attributes    Json       // store size, color, etc. dynamically
+  userId        Int?
+  user          User?     @relation(fields: [userId], references: [id])    
+  image         String?
+  is_buy         Boolean?   @default(false)
+  selectedCountry String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Address {
+  id        String   @id @default(cuid())
+  name      String
+  mobile    String
+  pincode   String
+  address   String
+  city      String
+  state     String
+  country   String?
+  landmark  String?
+  type      String   // Home | Office | Other
+  customType String?
+  isDefault   Boolean  @default(false)
+  userId    Int?
+  user      User?     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Tag {
+  id        Int      @id @default(autoincrement())
+  name      String
+  active    Boolean  @default(true)
+  image     String?
+  deleted   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  products  Product[] @relation("ProductTags")
+  variations ProductVariation[] @relation("VariationTags")
+}
+
+model MarketLink {
+  id          String   @id @default(cuid())
+  countryName String
+  countryCode String
+  name        String
+  url         String
+  deleted     Boolean  @default(false)
+  productId   String?  // optional abhi
+  product     Product? @relation(fields: [productId], references: [id])  // optional
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model CountryTax {
+  id         Int       @id @default(autoincrement())
+  country    String
+  countryCode String?
+  categoryId Int
+  category   Category  @relation(fields: [categoryId], references: [id])
+  generalTax Float?
+  gstTax     Float?
+  type       String?
+  active     Boolean   @default(true)
+  deleted    Int       @default(0)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model VideoStory {
+  id        Int      @id @default(autoincrement())
+  title     String
+  url       String
+  active    Boolean  @default(true)
+  deleted   Int      @default(0) // soft delete flag
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?                     
+}
+
+model Orders {
+  id             Int      @id @default(autoincrement())
+  orderNumber    String?  @unique
+  userId         Int?     
+  user           User?    @relation(fields: [userId], references: [id])
+  
+  shippingName    String?
+  shippingPhone   String?
+  shippingAddress String?
+  shippingCity    String?
+  shippingState   String?
+  shippingPincode String?
+
+  billingName    String?
+  billingPhone   String?
+  billingAddress String?
+  billingCity    String?
+  billingState   String?
+  billingPincode String?
+
+  items           Json      
+  subtotal        Float?
+  shippingCharges Float?
+  taxAmount       Float?    
+  discountAmount  Float?    
+  totalAmount     Float?
+  paymentMethod   String?
+  paymentCurrency String?
+  status          OrderStatus   @default(PENDING)   // order status
+  paymentStatus   PaymentStatus @default(PENDING)   // payment status
+
+  active          Boolean  @default(true)
+  deleted         Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
