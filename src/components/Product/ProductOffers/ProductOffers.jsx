@@ -116,7 +116,7 @@ const ProductOffers = ({ product, quantity, selectedVariation }) => {
     if (offersList.length === 0) return null;
 
     return (
-        <div className="p-4 rounded-md shadow-sm bg-yellow-100 border-l-4 border-yellow-500 flex flex-col gap-2 mb-6">
+        <div className="p-4 rounded-md shadow-sm bg-yellow-100 border-l-4 border-yellow-500 flex flex-col gap-2 mb-6 text-[#162a33]">
             {[...new Map(offersList.map((o) => [o.id, o])).values()].map(
                 (offer, index) => {
                     const rangeAppliedMsg = getRangeOfferApplied(offer);

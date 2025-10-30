@@ -690,7 +690,7 @@ const ProductDetail = () => {
                 {/* Product Info */}
                 <div className="md:w-1/2 flex flex-col justify-between font-functionPro">
                     <div>
-                        <h1 className="text-5xl mb-6 text-gray-900">  {selectedVariation?.name || product.name}</h1>
+                        <h1 className="text-5xl mb-6 text-[#162a33]">  {selectedVariation?.name || product.name}</h1>
                         {/* <p className="text-3xl text-gray-700 mb-6 font-semibold">
                             {(selectedVariation?.currency ?? product.currency) + " "}
                             {(selectedVariation?.currencySymbol ?? product.currencySymbol)}
@@ -704,7 +704,7 @@ const ProductDetail = () => {
                             {(selectedVariation?.currencySymbol ?? product.currencySymbol)}
                             {displayedPrice()}
                         </p> */}
-                        <p className="text-3xl text-gray-700 mb-6 font-semibold">
+                        <p className="text-3xl text-[#162a33] mb-6 font-semibold">
                             {(selectedVariation?.currency ?? product.currency) + " "}
 
                             {(() => {
@@ -718,7 +718,7 @@ const ProductDetail = () => {
                             })()}
                         </p>
 
-                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                        <p className="text-lg text-[#162a33] mb-8 leading-relaxed">
                             {selectedVariation?.short || product.short}
                         </p>
 
@@ -863,7 +863,7 @@ const ProductDetail = () => {
                                 </div>
                                 <button
                                     onClick={addToCart}
-                                    className="px-10 py-4 bg-gray-700 text-white rounded-lg hover:bg-black transition cursor-pointer shadow-lg text-xl"
+                                    className="px-10 py-4 bg-[#162a33] text-[#f3ce8e] rounded-lg hover:bg-[#162a33] transition cursor-pointer shadow-lg text-xl"
                                 >
                                     Add to Cart
                                 </button>
